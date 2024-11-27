@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Launch the startup file -->
+  <include file="$(find cave_explorer)/launch/cave_explorer_startup.launch" />
+  
+  <!-- Launch the navigation file -->
+  <include file="$(find cave_explorer)/launch/cave_explorer_navigation.launch" />
+  
+  <!-- Launch the detections executable -->
+  <node pkg="cave_explorer" type="detections_node.py" name="detections_node" output="screen" />
+  
+  <!-- Launch the autonomy file -->
+  <include file="$(find cave_explorer)/launch/cave_explorer_autonomy.launch" />
+
+</launch>
